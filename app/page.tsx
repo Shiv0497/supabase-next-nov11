@@ -39,7 +39,8 @@ export default function InsertMessage() {
   const [syncQueue, setSyncQueue] = useState<Message[]>([]);
   const [isSyncing, setIsSyncing] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
-  const syncTimeoutRef = useRef<NodeJS.Timeout>();
+  const syncTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
 
   // Auth state listener
   useEffect(() => {
